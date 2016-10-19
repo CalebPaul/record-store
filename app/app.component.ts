@@ -21,7 +21,8 @@ export class AppComponent {
     new Album("Songs by Sam Cooke", "Sam Cooke", "Soul", 10),
     new Album("Encore", "Sam Cooke", "Soul", 8),
     new Album("Sweet Baby James", "James Taylor", "Folk", 12),
-    new Album("Walking Man", "James Taylor", "Folk", 10)
+    new Album("Walking Man", "James Taylor", "Folk", 10),
+    new Album("James Taylor Live", "James Taylor", "Rock", 20)
   ];
   selectedAlbum: Album = null;
   showDetails(clickedAlbum: Album) {
