@@ -4,13 +4,13 @@ import { Album } from './album.model';
 @Component({
   selector: 'my-app',
   template: `
-  <div class="container">
+  <div class="container text-center">
     <h1>Record Store</h1>
+  <album-list
+  [childAlbumList]="masterAlbumList"
+  (clickSender)="showDetails($event)"
+  ></album-list>
   </div>
-  <album-list>
-
-
-  </album-list>
   `
 })
 
@@ -23,4 +23,8 @@ export class AppComponent {
     new Album("Sweet Baby James", "James Taylor", "Folk", 12),
     new Album("Walking Man", "James Taylor", "Folk", 10)
   ];
+  selectedAlbum: Album = null;
+  showDetails(clickedAlbum: Album) {
+    this.selectedAlbum = clickedAlbum;
+  }
 }

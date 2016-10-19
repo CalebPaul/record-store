@@ -5,14 +5,16 @@ import { Album } from './album.model';
   selector: 'album-display',
   template:`
     <div>
-      <ul>
-        <li><h3>{{ album.name }}</h3></li>
-        <li>{{ album.artist }}</li>
-        <li>{{ album.genre }}</li>
-        <li>{{ album.price }}</li>
+      <ul class="text-center">
+        <li>
+        <input *ngIf="album.carted === true" type="checkbox" (click)="toggleCart(false)"/>
+        <input *ngIf="album.carted === false" type="checkbox" checked (click)="toggleCart(true)"/>
+        <strong>{{ album.artist }}</strong>, {{ album.name }}
+        </li>
+        <li class="text-center">{{ album.genre }}</li>
+        <li class="text-center">{{ album.price }}.00</li>
       </ul>
-      <input *ngIf="album.carted === true" type="checkbox" (click)="toggleCart(false)"/>
-      <input *ngIf="album.carted === false" type="checkbox" checked (click)="toggleCart(true)"/>
+
     </div>
   `
 })

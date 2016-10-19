@@ -4,13 +4,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }   from './app.component';
 import { AlbumComponent }   from './album.component';
 import { AlbumListComponent }   from './album-list.component';
+import { GenrePipe } from './genre.pipe';
+import { ArtistPipe } from './artist.pipe';
 
 @NgModule({
-  imports: [BrowserModule],
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
   declarations: [
      AppComponent,
      AlbumComponent,
      AlbumListComponent,
+     GenrePipe,
+     ArtistPipe
    ],
   bootstrap:    [ AppComponent ]
 })
