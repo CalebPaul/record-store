@@ -5,7 +5,8 @@ import { Album } from './album.model';
   selector: 'cart',
   template: `
   <div>
-    <div *ngFor="let currentAlbum of childAlbumList | cart:">
+    <div *ngFor="let currentAlbum of childAlbumList | cartstatus:selectedCarted">
+    <album-display [album]="currentAlbum"></album-display>
     </div>
   </div>
   `
@@ -14,4 +15,5 @@ import { Album } from './album.model';
 export class CartAlbumComponent {
   @Input() childAlbumList: Album[];
   public selectedCarted: boolean = false;
+
 }

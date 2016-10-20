@@ -13,7 +13,7 @@ var album_model_1 = require('./album.model');
 var AlbumComponent = (function () {
     function AlbumComponent() {
     }
-    AlbumComponent.prototype.toggleDone = function (setCarted) {
+    AlbumComponent.prototype.toggleCart = function (setCarted) {
         this.album.carted = setCarted;
     };
     __decorate([
@@ -23,7 +23,7 @@ var AlbumComponent = (function () {
     AlbumComponent = __decorate([
         core_1.Component({
             selector: 'album-display',
-            template: "\n    <div>\n      <ul>\n        <li>\n        <input *ngIf=\"album.carted === true\" type=\"checkbox\" (click)=\"toggleCart(false)\"/>\n        <input *ngIf=\"album.carted === false\" type=\"checkbox\" checked (click)=\"toggleCart(true)\"/>\n        <strong>{{ album.artist }}</strong>, <em>{{ album.name }}</em>\n        </li>\n        <li>{{ album.genre }}</li>\n        <li>{{ \"$\" + album.price }}.00</li>\n      </ul>\n\n    </div>\n  "
+            template: "\n    <div>\n      <ul>\n        <li>\n        <input *ngIf=\"album.carted === true\" type=\"checkbox\" checked (click)=\"toggleCart(false)\"/>\n        <input *ngIf=\"album.carted === false\" type=\"checkbox\" (click)=\"toggleCart(true)\"/>\n        <strong>{{ album.artist }}</strong>, <em>{{ album.name }}</em>\n        </li>\n        <li>{{ album.genre }}</li>\n        <li>{{ \"$\" + album.price }}.00</li>\n      </ul>\n\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AlbumComponent);

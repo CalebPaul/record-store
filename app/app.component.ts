@@ -10,6 +10,9 @@ import { Album } from './album.model';
   [childAlbumList]="masterAlbumList"
   (clickSender)="showDetails($event)"
   ></album-list>
+  <cart
+
+  ></cart>
   </div>
   `
 })

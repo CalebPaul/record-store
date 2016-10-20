@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Album } from './album.model';
 
 @Component({
@@ -7,8 +7,8 @@ import { Album } from './album.model';
     <div>
       <ul>
         <li>
-        <input *ngIf="album.carted === true" type="checkbox" (click)="toggleCart(false)"/>
-        <input *ngIf="album.carted === false" type="checkbox" checked (click)="toggleCart(true)"/>
+        <input *ngIf="album.carted === true" type="checkbox" checked (click)="toggleCart(false)"/>
+        <input *ngIf="album.carted === false" type="checkbox" (click)="toggleCart(true)"/>
         <strong>{{ album.artist }}</strong>, <em>{{ album.name }}</em>
         </li>
         <li>{{ album.genre }}</li>
@@ -21,7 +21,7 @@ import { Album } from './album.model';
 
 export class AlbumComponent {
   @Input() album: Album;
-  toggleDone(setCarted: boolean) {
+  toggleCart(setCarted: boolean) {
     this.album.carted = setCarted;
   }
 }

@@ -16,6 +16,8 @@ var album_component_1 = require('./album.component');
 var album_list_component_1 = require('./album-list.component');
 var genre_pipe_1 = require('./genre.pipe');
 var artist_pipe_1 = require('./artist.pipe');
+var cartstatus_pipe_1 = require('./cartstatus.pipe');
+var cart_component_1 = require('./cart.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -30,7 +32,9 @@ var AppModule = (function () {
                 album_component_1.AlbumComponent,
                 album_list_component_1.AlbumListComponent,
                 genre_pipe_1.GenrePipe,
-                artist_pipe_1.ArtistPipe
+                artist_pipe_1.ArtistPipe,
+                cartstatus_pipe_1.CartPipe,
+                cart_component_1.CartAlbumComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

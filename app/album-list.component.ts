@@ -24,7 +24,6 @@ import { Album } from './album.model';
 
 export class AlbumListComponent {
   @Input() childAlbumList: Album[];
-  @Output() clickSender = new EventEmitter();
   public selectedGenre: string = "all";
   public selectedArtist: string = "all";
   onChangeGenre(optionGenre) {

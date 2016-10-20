@@ -29,7 +29,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n  <div class=\"container text-center\">\n    <h1>Record Store</h1>\n  <album-list\n  [childAlbumList]=\"masterAlbumList\"\n  (clickSender)=\"showDetails($event)\"\n  ></album-list>\n  </div>\n  "
+            template: "\n  <div class=\"container text-center\">\n    <h1>Record Store</h1>\n  <album-list\n  [childAlbumList]=\"masterAlbumList\"\n  (clickSender)=\"showDetails($event)\"\n  ></album-list>\n  <cart\n\n  ></cart>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

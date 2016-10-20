@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AlbumListComponent = (function () {
     function AlbumListComponent() {
-        this.clickSender = new core_1.EventEmitter();
         this.selectedGenre = "all";
         this.selectedArtist = "all";
     }
@@ -25,10 +24,6 @@ var AlbumListComponent = (function () {
         core_1.Input(), 
         __metadata('design:type', Array)
     ], AlbumListComponent.prototype, "childAlbumList", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], AlbumListComponent.prototype, "clickSender", void 0);
     AlbumListComponent = __decorate([
         core_1.Component({
             selector: 'album-list',
