@@ -13,8 +13,10 @@ var album_model_1 = require('./album.model');
 var AlbumComponent = (function () {
     function AlbumComponent() {
     }
+    //  @Output() cartSender = new EventEmitter();
     AlbumComponent.prototype.toggleCart = function (setCarted) {
         this.album.carted = setCarted;
+        console.log(this.album.name, this.album.carted);
     };
     __decorate([
         core_1.Input(), 

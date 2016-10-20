@@ -7,9 +7,14 @@ import { Album } from './album.model';
   <div class="container text-center">
     <h1>Record Store</h1>
   <album-list
-  [childAlbumList]="masterAlbumList"
-  (clickSender)="showDetails($event)"
+    [childAlbumList]="masterAlbumList"
+    (clickSender)="showDetails($event)"
+
   ></album-list>
+  <cart
+    [childAlbumList]="masterAlbumList"
+
+  ></cart>
   </div>
   `
 })
@@ -27,5 +32,11 @@ export class AppComponent {
   selectedAlbum: Album = null;
   showDetails(clickedAlbum: Album) {
     this.selectedAlbum = clickedAlbum;
+  }
+  receiveCarted(cartedAlbum: Album){
+    // (carryCartSender)="receiveCarted($event)"
+    // console.log(cartedAlbum);
+    // this.masterAlbumList[this.masterAlbumList.indexOf(cartedAlbum)].carted = true;
+    // console.log(cartedAlbum);
   }
 }

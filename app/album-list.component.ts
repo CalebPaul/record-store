@@ -17,7 +17,10 @@ import { Album } from './album.model';
       <option value="James Taylor" >Show James Taylor Albums</option>
     </select>
   <div *ngFor="let currentAlbum of childAlbumList | genre:selectedGenre | artist:selectedArtist">
-    <album-display [album]="currentAlbum"></album-display>
+    <album-display
+      [album]="currentAlbum"
+
+    ></album-display>
   </div>
   `
 })
@@ -25,6 +28,7 @@ import { Album } from './album.model';
 export class AlbumListComponent {
   @Input() childAlbumList: Album[];
   @Output() clickSender = new EventEmitter();
+  @Output() carryCartSender = new EventEmitter();
   public selectedGenre: string = "all";
   public selectedArtist: string = "all";
   onChangeGenre(optionGenre) {
@@ -32,5 +36,10 @@ export class AlbumListComponent {
   }
   onChangeArtist(optionArtist) {
     this.selectedArtist = optionArtist;
+  }
+  onChangeCart(cartAlbum: Album){
+    // (cartSender)="onChangeCart($event)"
+    // console.log(cartAlbum);
+    // this.carryCartSender.emit(cartAlbum);
   }
 }

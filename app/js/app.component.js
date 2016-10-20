@@ -26,10 +26,16 @@ var AppComponent = (function () {
     AppComponent.prototype.showDetails = function (clickedAlbum) {
         this.selectedAlbum = clickedAlbum;
     };
+    AppComponent.prototype.receiveCarted = function (cartedAlbum) {
+        // (carryCartSender)="receiveCarted($event)"
+        // console.log(cartedAlbum);
+        // this.masterAlbumList[this.masterAlbumList.indexOf(cartedAlbum)].carted = true;
+        // console.log(cartedAlbum);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n  <div class=\"container text-center\">\n    <h1>Record Store</h1>\n  <album-list\n  [childAlbumList]=\"masterAlbumList\"\n  (clickSender)=\"showDetails($event)\"\n  ></album-list>\n  </div>\n  "
+            template: "\n  <div class=\"container text-center\">\n    <h1>Record Store</h1>\n  <album-list\n    [childAlbumList]=\"masterAlbumList\"\n    (clickSender)=\"showDetails($event)\"\n\n  ></album-list>\n  <cart\n    [childAlbumList]=\"masterAlbumList\"\n\n  ></cart>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

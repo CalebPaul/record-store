@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var AlbumListComponent = (function () {
     function AlbumListComponent() {
         this.clickSender = new core_1.EventEmitter();
+        this.carryCartSender = new core_1.EventEmitter();
         this.selectedGenre = "all";
         this.selectedArtist = "all";
     }
@@ -21,6 +22,11 @@ var AlbumListComponent = (function () {
     AlbumListComponent.prototype.onChangeArtist = function (optionArtist) {
         this.selectedArtist = optionArtist;
     };
+    AlbumListComponent.prototype.onChangeCart = function (cartAlbum) {
+        // (cartSender)="onChangeCart($event)"
+        // console.log(cartAlbum);
+        // this.carryCartSender.emit(cartAlbum);
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)
@@ -29,10 +35,14 @@ var AlbumListComponent = (function () {
         core_1.Output(), 
         __metadata('design:type', Object)
     ], AlbumListComponent.prototype, "clickSender", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], AlbumListComponent.prototype, "carryCartSender", void 0);
     AlbumListComponent = __decorate([
         core_1.Component({
             selector: 'album-list',
-            template: "\n    <select (change)=\"onChangeGenre($event.target.value)\" class=\"filter form-control\">\n      <option value=\"all\" selected>Show All Genre</option>\n      <option value=\"Rock\" >Show Rock</option>\n      <option value=\"Soul\" >Show Soul</option>\n      <option value=\"Folk\" >Show Folk</option>\n    </select>\n    <select (change)=\"onChangeArtist($event.target.value)\" class=\"filter form-control\">\n      <option value=\"all\" selected>Show All Artists</option>\n      <option value=\"Jimi Hendrix\" >Show Jimi Hendrix Albums</option>\n      <option value=\"Sam Cooke\" >Show Sam Cooke Albums</option>\n      <option value=\"James Taylor\" >Show James Taylor Albums</option>\n    </select>\n  <div *ngFor=\"let currentAlbum of childAlbumList | genre:selectedGenre | artist:selectedArtist\">\n    <album-display [album]=\"currentAlbum\"></album-display>\n  </div>\n  "
+            template: "\n    <select (change)=\"onChangeGenre($event.target.value)\" class=\"filter form-control\">\n      <option value=\"all\" selected>Show All Genre</option>\n      <option value=\"Rock\" >Show Rock</option>\n      <option value=\"Soul\" >Show Soul</option>\n      <option value=\"Folk\" >Show Folk</option>\n    </select>\n    <select (change)=\"onChangeArtist($event.target.value)\" class=\"filter form-control\">\n      <option value=\"all\" selected>Show All Artists</option>\n      <option value=\"Jimi Hendrix\" >Show Jimi Hendrix Albums</option>\n      <option value=\"Sam Cooke\" >Show Sam Cooke Albums</option>\n      <option value=\"James Taylor\" >Show James Taylor Albums</option>\n    </select>\n  <div *ngFor=\"let currentAlbum of childAlbumList | genre:selectedGenre | artist:selectedArtist\">\n    <album-display\n      [album]=\"currentAlbum\"\n\n    ></album-display>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AlbumListComponent);

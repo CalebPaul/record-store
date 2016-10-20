@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var CartAlbumComponent = (function () {
     function CartAlbumComponent() {
-        this.selectedCarted = false;
+        this.selectedCarted = true;
     }
     __decorate([
         core_1.Input(), 
@@ -20,7 +20,7 @@ var CartAlbumComponent = (function () {
     CartAlbumComponent = __decorate([
         core_1.Component({
             selector: 'cart',
-            template: "\n  <div>\n    <div *ngFor=\"let currentAlbum of childAlbumList | cart:selectedCarted\">\n    </div>\n  </div>\n  "
+            template: "\n  <div>\n  <h1>In Cart</h1>\n    <div *ngFor=\"let currentAlbum of childAlbumList | cart:selectedCarted\">\n      <p>{{currentAlbum.name}}</p>\n    </div>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], CartAlbumComponent);

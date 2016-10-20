@@ -14,13 +14,13 @@ var CartPipe = (function () {
     }
     CartPipe.prototype.transform = function (input, desiredAlbums) {
         var output = [];
-        if (desiredAlbums.carted === true) {
-            for (var i = 0; i < input.length; i++) {
+        for (var i = 0; i < input.length; i++) {
+            if (input[i].carted === true) {
                 output.push(input[i]);
                 console.log(input[i]);
             }
-            return output;
         }
+        return output;
     };
     CartPipe = __decorate([
         core_1.Pipe({
@@ -32,4 +32,10 @@ var CartPipe = (function () {
     return CartPipe;
 }());
 exports.CartPipe = CartPipe;
+// if (desiredAlbums.carted === true) {
+//   for (var i = 0; i < input.length; i++) {
+//     output.push(input[i]);
+//     console.log(input[i]); alert("comment test");
+//   }
+// }
 //# sourceMappingURL=cart.pipe.js.map

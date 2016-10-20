@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Album } from './album.model';
 
 @Component({
@@ -21,7 +21,9 @@ import { Album } from './album.model';
 
 export class AlbumComponent {
   @Input() album: Album;
+//  @Output() cartSender = new EventEmitter();
   toggleCart(setCarted: boolean) {
     this.album.carted = setCarted;
+    console.log(this.album.name, this.album.carted);
   }
 }
