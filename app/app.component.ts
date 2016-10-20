@@ -8,12 +8,9 @@ import { Album } from './album.model';
     <h1>Record Store</h1>
   <album-list
     [childAlbumList]="masterAlbumList"
-    (clickSender)="showDetails($event)"
-
   ></album-list>
   <cart
     [childAlbumList]="masterAlbumList"
-
   ></cart>
   </div>
   `
@@ -30,13 +27,17 @@ export class AppComponent {
     new Album("James Taylor Live", "James Taylor", "Rock", 20)
   ];
   selectedAlbum: Album = null;
-  showDetails(clickedAlbum: Album) {
-    this.selectedAlbum = clickedAlbum;
-  }
   receiveCarted(cartedAlbum: Album){
-    // (carryCartSender)="receiveCarted($event)"
-    // console.log(cartedAlbum);
-    // this.masterAlbumList[this.masterAlbumList.indexOf(cartedAlbum)].carted = true;
-    // console.log(cartedAlbum);
   }
+
+  public total: number = 0;
+  public purchased: Album[] = [];
+
+  // addPrices(album: Album){
+  //   for (var item of Album) {
+  //      this.total += item.price;
+  //     console.log(this.total);
+  //   }
+  //   return this.total;
+  // }
 }

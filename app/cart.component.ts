@@ -7,14 +7,13 @@ import { Album } from './album.model';
   <div>
   <h1>In Cart</h1>
     <div *ngFor="let currentAlbum of childAlbumList | cart:selectedCarted">
-      <p>{{currentAlbum.name}}</p>
+      <p>{{currentAlbum.name}} {{"- $"+currentAlbum.price}}</p>
     </div>
-  </div>
+</div>
   `
 })
 
 export class CartAlbumComponent {
   @Input() childAlbumList: Album[];
   public selectedCarted: boolean = true;
-
 }
