@@ -20,7 +20,7 @@ var CartAlbumComponent = (function () {
     CartAlbumComponent = __decorate([
         core_1.Component({
             selector: 'cart',
-            template: "\n  <div>\n    <div *ngFor=\"let currentAlbum of childAlbumList | cart:\">\n    </div>\n  </div>\n  "
+            template: "\n  <div>\n    <div *ngFor=\"let currentAlbum of childAlbumList | cart:selectedCarted\">\n    </div>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], CartAlbumComponent);

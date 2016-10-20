@@ -11,6 +11,7 @@ export class CartPipe implements PipeTransform {
     if (desiredAlbums.carted === true) {
       for (var i = 0; i < input.length; i++) {
         output.push(input[i]);
+        console.log(input[i]);
       }
     return output;}
   }

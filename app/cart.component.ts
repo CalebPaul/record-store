@@ -5,7 +5,7 @@ import { Album } from './album.model';
   selector: 'cart',
   template: `
   <div>
-    <div *ngFor="let currentAlbum of childAlbumList | cart:">
+    <div *ngFor="let currentAlbum of childAlbumList | cart:selectedCarted">
     </div>
   </div>
   `
